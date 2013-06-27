@@ -1,6 +1,6 @@
 
 # Calendar
-
+  添加了中文日期
   Calendar UI component designed for use as a date-picker,
   full-sized calendar or anything in-between.
 
