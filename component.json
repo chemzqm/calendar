@@ -15,7 +15,8 @@
     "component/in-groups-of": "1.0.0"
   },
   "development": {
-    "component/aurora-calendar": "*"
+    "component/aurora-calendar": "*",
+    "component/live-css": "*"
   },
   "styles": [
     "lib/calendar.css"
