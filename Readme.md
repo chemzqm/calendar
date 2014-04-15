@@ -6,6 +6,8 @@
 
   ![javascript calendar component](http://f.cl.ly/items/2u3w1D421W0C370Z3G1U/Screen%20Shot%202012-10-11%20at%2014.32.41.png)
 
+  Live demo is [here](http://component.github.io/calendar/)
+
 ## Installation
 
     $ component install component/calendar
@@ -55,6 +57,14 @@ cal.el.appendTo('body');
 ### Calendar#next()
 
   Show the next view (month).
+
+### Calendar#min()
+
+  Define earliest valid date - calendar won't generate `change` events for dates before this one.
+
+### Calendar#max()
+
+  Define latest valid date - calendar won't generate `change` events for dates after this one.
 
 ## Themes
 

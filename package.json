@@ -1,15 +1,30 @@
 {
   "name": "calendar-component",
   "description": "Calendar component",
-  "version": "0.0.4",
-  "keywords": ["calendar", "date", "ui"],
+  "version": "0.1.0",
+  "keywords": [
+    "calendar",
+    "date",
+    "ui"
+  ],
   "dependencies": {
-    "jquery-component": "*",
-    "emitter-component": "*",
-    "in-groups-of": "*"
+    "domify": "1.0.0",
+    "emitter-component": "1.0.1",
+    "classes-component": "1.1.3",
+    "range-component": "1.0.0",
+    "in-groups-of": "component/in-groups-of#1.0.0",
+    "event-component": "~0.1.0"
+  },
+  "browser": {
+    "event": "event-component",
+    "emitter": "emitter-component",
+    "classes": "classes-component",
+    "range": "range-component"
   },
   "component": {
-    "styles": ["lib/calendar.css"],
+    "styles": [
+      "lib/calendar.css"
+    ],
     "scripts": {
       "calendar/index.js": "index.js",
       "calendar/lib/utils.js": "lib/utils.js",
@@ -17,5 +32,14 @@
       "calendar/lib/calendar.js": "lib/calendar.js",
       "calendar/lib/days.js": "lib/days.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/calendar.git"
+  },
+  "devDependencies": {
+    "mocha": "~1",
+    "bounds": "~1.0.0",
+    "type-component": "0.0.1"
   }
 }

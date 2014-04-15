@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Calendar</title>
@@ -9,36 +10,51 @@
         padding: 80px;
         color: #333;
       }
-      
+
       .calendar.large {
         float: left;
         clear: both;
       }
-      
+
       .calendar.large tbody td {
         padding: 50px;
         border: 1px solid #eee;
         position: relative;
       }
-      
+
       .calendar.large tbody a {
         position: absolute;
         top: 5px;
         right: 5px;
       }
-      
+
       .calendar.small th {
         font-size: 10px;
       }
-      
+
       .calendar.small td a {
         font-size: 10px;
         padding: 3px;
+      }
+
+      .calendar td a.invalid {
+        opacity: .2;
+        background-color: rgba(0, 0, 0, .2);
+        cursor: default;
+      }
+
+      #restricted {
+        clear: left;
+      }
+      #restricted .calendar {
+        float: left;
       }
     </style>
   </head>
   <body>
     <h1>Calendar</h1>
+    <div id='standard'></div>
+    <div id='restricted'></div>
     <script src="build/build.js"></script>
     <script>
       require('live-css').start();
@@ -62,16 +78,30 @@
         large.select(newDate);
       });
 
-      one.el.appendTo('body');
+      var container = document.querySelector('#standard');
+      container.appendChild(one.el);
 
       var small = new Calendar;
       small.addClass('small');
-      small.el.appendTo('body');
+      container.appendChild(small.el);
       small.next();
-      
+
       var large = new Calendar;
       large.addClass('large');
-      large.el.appendTo('body');
+      container.appendChild(large.el);
+
+
+      container = document.querySelector('#restricted');
+      var restricted = new Calendar(new Date(2004, 6, 11))
+        .min(new Date(2004, 5, 12))
+        .max([2004, 7, 19])
+        .select(new Date(2004, 7, 19));
+      container.appendChild(restricted.el);
+      restricted = new Calendar(new Date(2004, 6, 11))
+        .max(new Date(2004, 5, 12))
+        .min([2004, 5, 18])
+        .show(new Date(2004, 5, 19));
+      container.appendChild(restricted.el);
     </script>
   </body>
 </html>
