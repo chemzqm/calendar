@@ -38,7 +38,7 @@
     "url": "https://github.com/component/calendar.git"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
+    "mocha": "~2.4.3",
     "bounds": "~1.0.0",
     "type-component": "0.0.1"
   }
